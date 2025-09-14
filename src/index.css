@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tribal Art Marketplace Design System
+   Warm, cultural palette inspired by traditional tribal art forms.
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core backgrounds - warm cream and pure white */
+    --background: 35 15% 98%;
+    --foreground: 25 25% 15%;
+
+    /* Card system - subtle warmth */
+    --card: 0 0% 100%;
+    --card-foreground: 25 25% 15%;
+
+    /* Popovers and overlays */
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 25% 15%;
+
+    /* Primary - rich terracotta/ochre inspired by tribal art */
+    --primary: 25 65% 45%;
+    --primary-foreground: 35 15% 98%;
+    --primary-glow: 25 75% 55%;
+
+    /* Secondary - warm earth tones */
+    --secondary: 35 25% 92%;
+    --secondary-foreground: 25 45% 25%;
+
+    /* Muted - sophisticated neutrals */
+    --muted: 30 20% 95%;
+    --muted-foreground: 25 15% 55%;
+
+    /* Accent - complementary warm tone */
+    --accent: 15 55% 50%;
+    --accent-foreground: 35 15% 98%;
+
+    /* Status colors */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 140 50% 45%;
+    --success-foreground: 0 0% 98%;
+    --warning: 45 85% 55%;
+    --warning-foreground: 25 25% 15%;
+
+    /* Interactive elements */
+    --border: 30 25% 88%;
+    --input: 30 25% 88%;
+    --ring: 25 65% 45%;
+
+    /* Design tokens */
+    --radius: 0.75rem;
+
+    /* Cultural gradients - inspired by tribal art patterns */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-warm: linear-gradient(180deg, hsl(35 15% 98%), hsl(30 20% 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(25 65% 45%), hsl(15 55% 50%));
+
+    /* Elegant shadows with warm undertones */
+    --shadow-soft: 0 2px 8px hsl(25 15% 15% / 0.08);
+    --shadow-medium: 0 4px 16px hsl(25 15% 15% / 0.12);
+    --shadow-strong: 0 8px 32px hsl(25 15% 15% / 0.16);
+    --shadow-cultural: 0 10px 40px hsl(var(--primary) / 0.15);
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - warm dark backgrounds */
+    --background: 25 15% 8%;
+    --foreground: 35 15% 92%;
+
+    /* Dark cards with subtle warmth */
+    --card: 25 15% 12%;
+    --card-foreground: 35 15% 92%;
+
+    /* Dark popovers */
+    --popover: 25 15% 12%;
+    --popover-foreground: 35 15% 92%;
+
+    /* Dark mode primary - brightened terracotta */
+    --primary: 25 75% 65%;
+    --primary-foreground: 25 15% 8%;
+    --primary-glow: 25 85% 75%;
+
+    /* Dark secondary */
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 35 15% 92%;
+
+    /* Dark muted */
+    --muted: 25 15% 15%;
+    --muted-foreground: 30 10% 65%;
+
+    /* Dark accent */
+    --accent: 15 65% 60%;
+    --accent-foreground: 25 15% 8%;
+
+    /* Dark status colors */
+    --destructive: 0 65% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 140 55% 55%;
+    --success-foreground: 0 0% 98%;
+    --warning: 45 90% 65%;
+    --warning-foreground: 25 15% 8%;
+
+    /* Dark interactive elements */
+    --border: 25 20% 22%;
+    --input: 25 20% 22%;
+    --ring: 25 75% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Floating images animation keyframes */
+@keyframes float1 {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-10px) translateX(5px) scale(1.05); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(8px) translateX(-3px) scale(1.07); }
+}
+@keyframes float3 {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-6px) translateX(7px) scale(1.04); }
+}
+@keyframes float4 {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(5px) translateX(-6px) scale(1.06); }
+}
+@keyframes float5 {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-8px) translateX(4px) scale(1.03); }
+}
+.animate-float-1 {
+  animation: float1 6s ease-in-out infinite;
+}
+.animate-float-2 {
+  animation: float2 7s ease-in-out infinite;
+}
+.animate-float-3 {
+  animation: float3 5.5s ease-in-out infinite;
+}
+.animate-float-4 {
+  animation: float4 6.5s ease-in-out infinite;
+}
+.animate-float-5 {
+  animation: float5 7.2s ease-in-out infinite;
+}
+
+/* Flip Slideshow styles */
+.flip-slideshow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 340px; /* Adjust as needed */
+  perspective: 1200px;
+}
+
+.flip-slideshow-img {
+  width: 400px; /* Adjust as needed */
+  height: 300px;
+  border-radius: 1rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.16);
+  object-fit: cover;
+  backface-visibility: hidden;
+  transition: transform 0.7s cubic-bezier(0.4,0,0.2,1), opacity 0.6s;
+}
+
+.flip-slideshow-img.flipping {
+  transform: rotateY(90deg);
+  opacity: 0.2;
+}
+
+.flip-slideshow-img.stable {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
